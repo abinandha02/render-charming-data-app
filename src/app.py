@@ -8,7 +8,7 @@ import pandas as pd
 import requests
 
 
-state_df = pd.read_csv(r'https://raw.githubusercontent.com/abinandha02/render_project/main/crimes_against_women_2001-2014-checkpoint.csv')
+state_df = pd.read_csv(r'http://raw.githubusercontent.com/abinandha02/render_project/main/crimes_against_women_2001-2014-checkpoint.csv')
 state_df.drop(columns="Unnamed: 0", inplace=True)
 state_df["STATE/UT"] = state_df.apply(lambda row: row['STATE/UT'].lower(), axis=1)
 state_df['STATE/UT'].replace(
@@ -17,7 +17,7 @@ state_df['STATE/UT'].replace(
 state_df['STATE/UT'] = state_df['STATE/UT'].str.title()
 
 
-url = "https://raw.githubusercontent.com/abinandha02/render_project/fa03a4c758e48508b5f1a68c137e32a4c13774a8/data/states_india.geojson"
+url = "http://raw.githubusercontent.com/abinandha02/render_project/fa03a4c758e48508b5f1a68c137e32a4c13774a8/data/states_india.geojson"
 response = requests.get(url)
 if response.status_code == 200:
     india_states = response.json()
