@@ -91,6 +91,6 @@ def update_choropleth_map(selectedcrime):
 
 
 if __name__ == '__main__':
-    app.run_server()
+    app.run_server(host='localhost', port=5000)
 
 
